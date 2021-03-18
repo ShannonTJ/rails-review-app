@@ -18,6 +18,7 @@ module Api
                     render json: AirlineSerializer.new(airline).serialized_json
                 else 
                     render json: {error: airline.errors.messages}, status: 422
+                end
             end
 
             def update
@@ -28,6 +29,7 @@ module Api
 
                 else 
                     render json: {error: airline.errors.messages}, status: 422
+                end
             end
 
             def destroy
@@ -38,6 +40,7 @@ module Api
 
                 else 
                     render json: {error: airline.errors.messages}, status: 422
+                end
             end
 
             private 
