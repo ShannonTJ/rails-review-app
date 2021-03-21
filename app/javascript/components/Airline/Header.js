@@ -1,15 +1,18 @@
 import React from "react";
 
 const Header = (props) => {
+  const { name, image_url, avg_score } = props.attributes;
+  const total = props.reviews.length;
+
   return (
     <div className="wrapper">
       <h1>
-        <img src="" />
-        Airline Name
+        <img src={image_url} alt={name} />
+        {name}
       </h1>
-      <div className="total-reviews"></div>
+      <div className="total-reviews">{total} User Reviews</div>
       <div className="rating"></div>
-      <div className="total-out-of"></div>
+      <div className="total-out-of">{avg_score} out of 5</div>
     </div>
   );
 };
