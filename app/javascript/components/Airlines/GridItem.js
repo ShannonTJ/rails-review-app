@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const GridItem = (props) => {
   return (
@@ -9,7 +10,7 @@ const GridItem = (props) => {
       <div className="name">{props.attributes.name}</div>
       <div className="score">{props.attributes.avg_score}</div>
       <div className="link">
-        <a href={`/airlines/${props.attributes.slug}`}>Show Details</a>
+        <Link to={`/airlines/${props.attributes.slug}`}>Show Details</Link>
       </div>
     </div>
   );
