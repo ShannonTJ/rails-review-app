@@ -23,7 +23,13 @@ const Subheader = styled.div`
   font-size: 26px;
 `;
 
-const Grid = styled.div``;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  padding: 20px;
+`;
 
 const Airlines = () => {
   const [airlines, setAirlines] = useState([]);
@@ -49,7 +55,7 @@ const Airlines = () => {
         <h1>RubyReviews</h1>
         <div className="subheader">A React/Rails project.</div>
       </Header>
-      <div className="grid">{grid}</div>
+      <Grid>{grid}</Grid>
     </Home>
   );
 };
