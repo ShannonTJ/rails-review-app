@@ -35,13 +35,9 @@ const Airlines = () => {
   const [airlines, setAirlines] = useState([]);
 
   useEffect(() => {
-    //get all airlines from api
-    //update airlines in our state
     axios
       .get("/api/v1/airlines.json")
-      .then((resp) => {
-        setAirlines(resp.data.data);
-      })
+      .then((resp) => setAirlines(resp.data.data))
       .catch((resp) => console.log(resp));
   }, [airlines.length]);
 
@@ -53,7 +49,7 @@ const Airlines = () => {
     <Home>
       <Header>
         <h1>RubyReviews</h1>
-        <div className="subheader">A React/Rails project.</div>
+        <Subheader>A React/Rails project.</Subheader>
       </Header>
       <Grid>{grid}</Grid>
     </Home>

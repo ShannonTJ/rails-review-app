@@ -5,10 +5,15 @@ import styled from "styled-components";
 const Card = styled.div`
   border: 1px solid #efefef;
   background: #fff;
+  text-align: center;
 `;
 
 const Logo = styled.div`
   width: 50px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
 
   img {
     height: 50px;
