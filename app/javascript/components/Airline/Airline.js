@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
+import ReviewForm from "./ReviewForm";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -51,20 +52,23 @@ const Airline = (props) => {
 
   return (
     <Wrapper>
-      <Column>
-        <Main>
-          {loaded && (
-            <Header
-              attributes={airline.data.attributes}
-              reviews={airline.included}
-            />
-          )}
-          <div className="reviews"></div>
-        </Main>
-      </Column>
-      <Column>
-        <div className="review-form">review form</div>
-      </Column>
+      {loaded && (
+        <>
+          <Column>
+            <Main>
+              <Header
+                attributes={airline.data.attributes}
+                reviews={airline.included}
+              />
+
+              <div className="reviews"></div>
+            </Main>
+          </Column>
+          <Column>
+            <ReviewForm />
+          </Column>
+        </>
+      )}
     </Wrapper>
   );
 };
