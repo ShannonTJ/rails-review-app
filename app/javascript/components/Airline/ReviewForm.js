@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
+import Grey from "./Stars/Grey";
+import Gold from "./Stars/Gold";
+import Hover from "./Stars/Hover";
 
 const RatingContainer = styled.div`
   text-align: center;
@@ -25,7 +28,20 @@ const RatingBox = styled.div`
     cursor: pointer;
     width: 40px;
     height: 40px;
-    background-image: url();
+    background-image: url("data:image/svg+xml;charset=UTF-8,${Grey}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+  }
+
+  input:checked ~ label,
+  input:checked ~ label ~ label {
+    background-image: url("data:image/svg+xml;charset=UTF-8,${Gold}");
+  }
+
+  input:not(:checked) ~ label:hover,
+  input:not(:checked) ~ label:hover ~ label {
+    background-image: url("data:image/svg+xml;charset=UTF-8,${Hover}");
   }
 `;
 
@@ -72,10 +88,10 @@ const ReviewForm = (props) => {
           />
         </div>
         <div className="field">
-          <div className="rating-container">
+          <RatingContainer>
             <div className="rating-title-text">Rate This Airline</div>
-            <div className="rating-box">{ratingOptions}</div>
-          </div>
+            <RatingBox>{ratingOptions}</RatingBox>
+          </RatingContainer>
         </div>
         <button type="submit">Submit Your Review</button>
       </form>
