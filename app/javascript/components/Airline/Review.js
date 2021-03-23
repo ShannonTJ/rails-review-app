@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "../Rating/Rating";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -8,9 +9,10 @@ const Card = styled.div`
   margin: 0 20px 20px 0;
 `;
 
-const RatingContainer = styled.div``;
-
-const RatingScore = styled.div``;
+const RatingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 const Title = styled.div`
   padding: 20px 0 0 0;
@@ -25,13 +27,13 @@ const Description = styled.div`
 const Review = (props) => {
   const { title, score, description } = props.attributes;
   return (
-    <div className="card">
-      <div className="rating-container">
-        <div className="rating-score">{score}</div>
-      </div>
-      <div className="title">{title}</div>
-      <div className="description">{description}</div>
-    </div>
+    <Card>
+      <RatingContainer>
+        <Rating score={score} />
+      </RatingContainer>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+    </Card>
   );
 };
 
