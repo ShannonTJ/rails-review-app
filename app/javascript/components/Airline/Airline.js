@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import ReviewForm from "./ReviewForm";
+import Review from "./Review";
 import axios from "axios";
 import styled from "styled-components";
 
